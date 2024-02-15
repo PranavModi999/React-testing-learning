@@ -4,14 +4,14 @@ import { Greet } from "../components/greet/Greet";
 describe("Greet", () => {
   it("should renders correctly", () => {
     render(<Greet />);
-    const textElement = screen.getByText(/Hello/i);
+    const textElement = screen.getByText(/Hello/);
     expect(textElement).toBeInTheDocument();
   });
 
-  it("should renders with a name", () => {
-    const name = "Pranav";
-    render(<Greet name={name} />);
-    const textElement = screen.getByText(`Hello ${name}`);
-    expect(textElement).toBeInTheDocument();
-  });
+    it("should renders with a name", () => {
+      const name = "Pranav";
+      render(<Greet name={name} />);
+      const textElement = screen.getByText(`Hello ${name}`);
+      expect(textElement).toBeInTheDocument();
+    });
 });
